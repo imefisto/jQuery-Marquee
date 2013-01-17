@@ -20,8 +20,8 @@ Options:
 
 Demo:
 -----
- - **Demo link:** http://jsfiddle.net/aamir/UUfn2/show/
- - **Playground:** http://jsfiddle.net/aamir/UUfn2/
+ - **Demo link:** http://jsfiddle.net/imefisto/tr6Ku/show/
+ - **Playground:** http://jsfiddle.net/imefisto/tr6Ku/
 
 Use:
 ----
@@ -29,7 +29,7 @@ Use:
 ###HTML:
 
 ```html
-<div class='marquee'>Lorem ipsum dolor sit amet, consectetur adipiscing elit END.</div>
+<div class='marquee'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam luctus consequat leo. Nullam fringilla interdum felis sed malesuada.</div>
 ```
 
 ###CSS:
