@@ -1,9 +1,15 @@
 jQuery-Marquee
 ==============
 
-jQuery plugin to scroll the text like the old traditional marquee
+This is a fork of a plugin for marquee effect done with jquery.
 
-**Blog post:** http://aamirafridi.com/jquery/jquery-marquee-plugin
+Please go to https://github.com/aamirafridi/jQuery-Marquee for the original.
+
+Changes:
+-------
+- Changed structure to match with the proposed at http://docs.jquery.com/Plugins/Authoring 
+- Added a stop,start,reset,revert methods
+
 
 Options:
 --------

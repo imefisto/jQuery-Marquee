@@ -1,58 +1,54 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script src="jquery.marquee.js"></script>
-		<script>
-			$(function(){
-				$('.marquee').marquee();
-				$('.marquee-with-options').marquee({
-					//speed in milliseconds of the marquee
-					speed: 15000,
-					//gap in pixels between the tickers
-					gap: 50,
-					//gap in pixels between the tickers
-					delayBeforeStart: 0,
-					//'left' or 'right'
-					direction: 'left'
-				});
-			});
-		</script>
-		<style type="text/css">
-			body {
-			  margin: 10px;
-			}
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+.container{height:55px;}
+.container-marquee{border:1px solid blue;width:350px;overflow:hidden;}
+a.paused .stop{display:none;}
+a .start{display:none;}
+a.paused .start{display:inline;}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class='container-marquee'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam luctus consequat leo. Nullam fringilla interdum felis sed malesuada.</div>
 
-			h1 {
-				margin-bottom: 20px;
-				border-bottom: 1px dotted #ccc;
-				padding-bottom: 10px;
-			}
+	<p>
+	<a class="startstop" href="#"><span class="start">Start</span>
+			<span class="stop">Stop</span></a>
+	</p>
+	<p><a class="revert" href="#">Revert</a></p>
+	<p><a class="reset" href="#">Reset</a></p>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.marquee.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.container-marquee').marquee({
+		speed: 20000,
+		gap: 40,
+		direction: 'right',
+		delayBeforeStart: 2000
+	});
 
-			.marquee, .marquee-with-options {
-			  width: 300px;
-			  overflow: hidden;
-			  border:1px solid #ccc;
-			}
-		</style>
-	</head>
-	<body>
-		<h1>jQuery Marquee</h1>
-		<h2>Options</h2>
-		<ul>
-			<li><b>speed:</b> Speed in milliseconds of the marquee. Please make note that same speed value will react differently for text with different lengths. Default is 10000.</li>
-			<li><b>gap:</b> Gap in pixels between the tickers. Default is 20</li>
-			<li><b>delayBeforeStart:</b> Time in milliseconds before the marquee starts animating. Default is 1000</li>
-			<li><b>direction:</b> Direction towards which the marquee will animate 'left' or 'right'. Default is 'left'</li>
-		</ul>
+	$('a.startstop').click(function(e){
+		if($(this).hasClass('paused')){
+			$('.container-marquee').marquee('start');
+		}else{
+			$('.container-marquee').marquee('stop');
+		}
+		$(this).toggleClass('paused');
+	});
 
-		<h2>Default options</h2>
-		<div class='marquee'>Lorem ipsum dolor sit amet, consectetur adipiscing elit END.</div>
-		
-		<h2>Options as data attributes</h2>
-		<div data-speed="2000" data-gap="30" data-direction="right" class='marquee'>Lorem ipsum dolor sit amet, consectetur adipiscing elit END.</div>
-		
-		<h2>Options passed with javascript object</h2>
-		<div class='marquee-with-options'>Lorem ipsum dolor sit amet, consectetur adipiscing elit END.</div>
-	</body>
+	$('a.revert').click(function(e){
+		$('.container-marquee').marquee('revert');
+	});
+	$('a.reset').click(function(e){
+		$('.container-marquee').marquee('reset');
+	});
+});
+</script>
+</body>
 </html>
