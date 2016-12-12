@@ -29,7 +29,9 @@
 						//gap in pixels between the tickers
 						delayBeforeStart: 1000,
 						//'left' or 'right'
-						direction: 'left'
+						direction: 'left',
+            // pause in milliseconds before restart
+            postAnimationPause: 0
 					};
 					// Extend the options if any provided
 					settings = $.extend({},defaults, options);
@@ -120,8 +122,11 @@
 		'linear',
 		function(){
 			//Move to zero possition
-			$elem.css('margin-left', settings.direction == 'left' ? 0 : '-' + elWidth + 'px');
-			animateMarquee($elem,settings)
+      $elem.css('margin-left', settings.direction == 'left' ? 0 : '-' + elWidth + 'px');
+
+      setTimeout(function() {
+        animateMarquee($elem,settings)
+      }, settings.postAnimationPause);
 		});
 	};
 

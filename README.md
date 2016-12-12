@@ -15,8 +15,9 @@ Options:
 --------
  - **speed:** Speed in milliseconds of the marquee. Please make note that same speed value will react differently for text with different lengths. Default is 10000.</li>
  - **gap:** Gap in pixels between the tickers. Default is 20</li>
- - **delayBeforeStart:** Time in milliseconds before the marquee starts animating. Default is 1000</li>
+ - **delayBeforeStart:** Time in milliseconds before the marquee starts animation. Default is 1000</li>
  - **direction:** Direction towards which the marquee will animate 'left' or 'right'. Default is 'left'</li>
+ - **postAnimationPause:** Time in milliseconds after the marquee ends animation. Default is 0 (it restarts the animation immediatly after finishing)</li>
 
 Demo:
 -----
@@ -56,6 +57,8 @@ $('.marquee').marquee({
 	//gap in pixels between the tickers
 	delayBeforeStart: 0,
 	//'left' or 'right'
-	direction: 'left'
+	direction: 'left',
+	// duration of the pause after the animation
+	postAnimationPause: 0
 });
 ```
